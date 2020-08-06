@@ -10,10 +10,9 @@ this.items = items;
         this.items.push(item);
     }
     removeItem(item) {
-        for (let i = 0; i < this.items.length; i += 1) {
-            if (this.items[i] === item) {
-                this.items.splice(i, 1)
-            }
+        let findItem = this.items.findIndex(el => el === item);
+        if (findItem !== -1) {
+            this.items.splice(findItem, 1)
         }
     }
 
